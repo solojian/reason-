@@ -1,30 +1,33 @@
 <template>
   <div class="home">
     <section id="services" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Services</h2>
-          <span>Services</span>
-          <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</p>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-xs-12" v-for="(item,index) in row" :key="index">
-            <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.2s">
-              <div class="icon color-1">
-              <i :class="item.icon"></i>
+      <SpotLight>
+         <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Our Services</h2>
+            <span>Services</span>
+            <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-xs-12" v-for="(item,index) in row" :key="index">
+              <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.2s">
+                <div class="icon color-1">
+                <i :class="item.icon"></i>
+                </div>
+                <h4>{{item.title}}</h4>
+                <p>{{item.content}}</p>
               </div>
-              <h4>{{item.title}}</h4>
-              <p>{{item.content}}</p>
             </div>
           </div>
         </div>
-      </div>
+      </SpotLight>
     </section>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import SpotLight from '../components/content/SpotLight.vue'
 export default {
   name: 'Home',
   data() {
@@ -60,6 +63,7 @@ export default {
     }
   },
   components: {
+    SpotLight
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Github/>
+    <Github />
     <div class="allwrap">
       <header-guider/>
       <div class="content-wrap">
