@@ -1,20 +1,56 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <Github/>
+    <div class="allwrap">
+      <header-guider/>
+      <div class="content-wrap">
+        <el-container>
+          <sider-nav/>
+          <el-main>
+            <router-view/>
+          </el-main>
+        </el-container>
+      </div>
     </div>
-    <router-view/>
   </div>
 </template>
+<script>
+import HeaderGuider from './components/common/HeaderGuider'
+import Github from './components/common/Github'
+import SiderNav from './components/content/SiderNav'
 
+export default {
+  data() {
+    return {
+
+    }
+  },
+  components: {
+    HeaderGuider,
+    Github,
+    SiderNav
+
+  }
+}
+</script>
 <style lang="scss">
+@import './assets/normalize.css';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  .allwrap {
+    width: 1100px;
+    min-width: 960px;
+    margin: 0 auto;
+    background-color: #fff;
+    .content-wrap {
+      margin-top: 38px;
+      height: 100%;
+    }
+  }
 }
 
 #nav {
